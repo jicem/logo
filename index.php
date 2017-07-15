@@ -1,0 +1,1 @@
+<?php$images = array();if ($dh = opendir(".")) {	while (($file = readdir($dh)) !== false) {		if (substr($file, -4) == ".png") {			$images[] = $file;		}	}	closedir($dh);}$rand = rand(1, count($images))-1;header("Location: {$images[$rand]}");#$file = file($images[$rand]);#foreach ($file as $line) {#	echo $line;#}?>
